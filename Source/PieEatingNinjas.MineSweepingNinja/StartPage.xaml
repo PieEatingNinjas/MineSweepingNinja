@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="PieEatingNinjas.MineSweepingNinja.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PieEatingNinjas.MineSweepingNinja"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}">
+
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock Text="Mine Sweeping Ninja" 
+                   FontWeight="Bold"
+                   Foreground="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"
+                   FontSize="35" HorizontalAlignment="Stretch" TextAlignment="Center" />
+        <TextBlock FontSize="55" x:Name="Cat"
+                           HorizontalAlignment="Center" TextAlignment="Center"/>
+        <Button Content="Start" Style="{ThemeResource ButtonRevealStyle}" Margin="0 30"
+                Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"
+                Tapped="Button_Tapped" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Page>
