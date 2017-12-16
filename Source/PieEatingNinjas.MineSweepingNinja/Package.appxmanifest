@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="41aecbe3-866d-4cbe-8ede-6c65de5c6763" Publisher="CN=pieternijs" Version="0.0.1.0" />
+  <Identity Name="41aecbe3-866d-4cbe-8ede-6c65de5c6763" Publisher="CN=pieternijs" Version="0.1.0.0" />
   <mp:PhoneIdentity PhoneProductId="41aecbe3-866d-4cbe-8ede-6c65de5c6763" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>PieEatingNinjas.MineSweepingNinja</DisplayName>
@@ -16,7 +16,11 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="PieEatingNinjas.MineSweepingNinja.App">
       <uap:VisualElements DisplayName="Mine Sweeping Ninja" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Mine Sweeping Ninja is a Fluent re-design of the popular Minesweeper game." BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" ShortName="Mine Sweeping Ninja">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
