@@ -35,6 +35,8 @@ namespace PieEatingNinjas.MineSweepingNinja
             set { _Image = value; RaisePropertyChanged(); }
         }
 
+        bool HasWon;
+
         public FinishedPage()
         {
             this.InitializeComponent();
@@ -44,8 +46,8 @@ namespace PieEatingNinjas.MineSweepingNinja
         {
             base.OnNavigatedTo(e);
 
-            var hasWon = e.Parameter as bool?;
-            if (hasWon ?? false)
+            HasWon = (e.Parameter as bool? ?? false);
+            if (HasWon)
             {
                 Title = "I don't always play games";
                 Subtitle = "But when I do, I win!";
@@ -65,12 +67,23 @@ namespace PieEatingNinjas.MineSweepingNinja
             }
         }
 
-        public async void Continue()
+        public async void NewGame()
         {
             Image = NINJA;
             await Task.Delay(200);
             ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("cat", txtImage);
-            this.Frame.GoBack();
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        public async void ViewBoard()
+        {
+            if (HasWon)
+            {
+                Image = NINJA;
+                await Task.Delay(200);
+            }
+            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("cat", txtImage);
+            Frame.GoBack();
         }
 
         public void RaisePropertyChanged([CallerMemberName]string property = null)

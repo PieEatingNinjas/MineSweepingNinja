@@ -17,6 +17,8 @@ namespace PieEatingNinjas.MineSweepingNinja.MineSweeper
         public int TotalMines { get; private set; }
         public Tile[,] Tiles { get; private set; }
 
+        public Tile ExplodedTile { get; private set; }
+
         int _ElapsedTime;
         public int ElapsedTime
         {
@@ -43,6 +45,7 @@ namespace PieEatingNinjas.MineSweepingNinja.MineSweeper
             ElapsedTime = 0;
             dismantledMines = 0;
             incorrectDismantled = 0;
+            ExplodedTile = null;
 
             Tiles = new Tile[Width, Height];
             for (int x = 0; x < Width; x++)
@@ -106,6 +109,7 @@ namespace PieEatingNinjas.MineSweepingNinja.MineSweeper
             {
                 item.Reveal();
             }
+            ExplodedTile = sender as Tile;
             OnExploded?.Invoke(sender, null);
         }
 

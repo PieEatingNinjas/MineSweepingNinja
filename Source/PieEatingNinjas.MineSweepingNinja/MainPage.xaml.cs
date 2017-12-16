@@ -33,7 +33,6 @@ namespace PieEatingNinjas.MineSweepingNinja
         public MainPage()
         {
             this.InitializeComponent();
-            Start();
         }
 
         public void RaisePropertyChanged([CallerMemberName]string property = null)
@@ -89,11 +88,18 @@ namespace PieEatingNinjas.MineSweepingNinja
         {
             base.OnNavigatedTo(e);
             Cat.Text = NINJA;
-            ConnectedAnimation animation = ConnectedAnimationService.GetForCurrentView().GetAnimation("cat");
+
+            if (e.NavigationMode != NavigationMode.Back)
+                Start();
+
+            TryStartAnimation("cat", (UIElement)Game.ExplodedTile ?? Cat);
+        }
+
+        private void TryStartAnimation(string name, UIElement element)
+        {
+            var animation = ConnectedAnimationService.GetForCurrentView().GetAnimation(name);
             if (animation != null)
-            {
-                animation.TryStart(Cat);
-            }
+                animation.TryStart(element);
         }
     }
 }

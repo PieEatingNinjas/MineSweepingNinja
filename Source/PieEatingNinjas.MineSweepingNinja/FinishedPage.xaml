@@ -25,9 +25,16 @@
                    Foreground="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"
                    FontSize="35" HorizontalAlignment="Stretch" TextAlignment="Center" />
 
-        <Button Content="Continue" Tapped="{x:Bind Continue}" 
-                Style="{ThemeResource ButtonRevealStyle}" Margin="0 30"
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="View minefield" Tapped="{x:Bind ViewBoard}" 
+                Style="{ThemeResource ButtonRevealStyle}" Margin="5 30"
                 Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"
                 HorizontalAlignment="Center"/>
+            <Button Content="Let's play again" Tapped="{x:Bind NewGame}" 
+                Style="{ThemeResource ButtonRevealStyle}" Margin="5 30"
+                Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"
+                HorizontalAlignment="Center"/>
+        </StackPanel>
+        
     </StackPanel>
 </Page>
