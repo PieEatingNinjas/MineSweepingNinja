@@ -10,14 +10,14 @@
     Background="{ThemeResource SystemControlAltMediumLowAcrylicWindowMediumBrush}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="55" />
+            <RowDefinition Height="45" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Stretch"
               Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="45" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="{x:Bind Game.ElapsedTime, Mode=OneWay}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20, 0" FontSize="20" FontFamily="Consolas" />
